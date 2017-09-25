@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FFE457F3DDBC6D5E7FF0997C02059E2316254F3C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "77BA37A62A0AA3AC8379EE9834A6279F93B768BC" : 0,
+    "FFE457F3DDBC6D5E7FF0997C02059E2316254F3C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8DB5505D-D1FE-4504-99C2-C078C0120BFB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "77BA37A62A0AA3AC8379EE9834A6279F93B768BC" : "CS3113\/project_template\/Xcode\/Homework1\/NYUCodebase\/",
+    "FFE457F3DDBC6D5E7FF0997C02059E2316254F3C" : "CS3113\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NYUCodebase",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "project_template\/Xcode\/Homework1\/NYUCodebase.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ldorourke\/ORourke_CS3113",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77BA37A62A0AA3AC8379EE9834A6279F93B768BC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ivansafrin\/CS3113.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FFE457F3DDBC6D5E7FF0997C02059E2316254F3C"
+    }
+  ]
+}
