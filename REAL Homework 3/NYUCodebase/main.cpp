@@ -360,13 +360,13 @@ int main(int argc, char *argv[]) {
                 if (checkDirec == 2.0f) {
                     Enemies[i][j].direction = 0.0f;
                     Enemies[i][j].pos.y -= 0.05f;
-                    if (Enemies[i][j].pos.y <= -1.4f) done = true;
+                    if (Enemies[i][j].pos.y <= -1.1f) done = true;
                 }
                 
                 if (checkDirec == 1.0f){
                     Enemies[i][j].direction = 180.0f;
                     Enemies[i][j].pos.y -= 0.05f;
-                    if (Enemies[i][j].pos.y <= -1.4f) done = true;
+                    if (Enemies[i][j].pos.y <= -1.1f) done = true;
                 }
             }
         }
