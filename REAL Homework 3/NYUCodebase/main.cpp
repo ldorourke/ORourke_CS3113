@@ -209,7 +209,7 @@ GLuint LoadTexture(const char *img_path){
 }
 
 
-enum GameState {TITLE_SCREEN, GAME_LEVEL};
+enum GameState {TITLE_SCREEN, GAME_LEVEL, GAME_OVER};
 int main(int argc, char *argv[]) {
     
     SDL_Init(SDL_INIT_VIDEO);
@@ -233,6 +233,8 @@ int main(int argc, char *argv[]) {
     SheetSprite player(sprite, 224.0f / 1024.0f, 832.0f / 1024.0f, 99.0f / 1024.0f, 75.0f / 1024.0f, 0.40f);
     SheetSprite bullet(sprite, 858.0f / 1024.0f, 230.0f / 1024.0f, 9.0f / 1024.0f, 54.0f / 1024.0f, 0.30f);
     SheetSprite enemy(sprite, 120.0f / 1024.0f, 604.0f / 1024.0f, 104.0f / 1024.0f, 84.0f / 1024.0f, 0.40f);
+    SheetSprite enemy2(sprite, 143.0f / 1024.0f, 293.0f / 1024.0f, 104.0f / 1024.0f, 84.0f / 1024.0f, 0.40f);
+    SheetSprite enemy3(sprite, 120.0f / 1024.0f, 520.0f / 1024.0f, 104.0f / 1024.0f, 84.0f / 1024.0f, 0.40f);
     
     Entity Shooter(sprite, 0.4, 1.2, Vector3(0.0f, -1.5f, 0.0f),  coordsText(0.0f,0.8679f,0.0f, 1.025f));
     
@@ -285,6 +287,24 @@ int main(int argc, char *argv[]) {
                 lastBullFired = ticks;
             }
             
+            if (state == GAME_OVER && keys[SDL_SCANCODE_S]) {
+                state = GAME_LEVEL;
+                lastBullFired = ticks;
+                enemiesLeft = 18;
+                score = 0;
+                
+                for (int i = 0; i < 3; i++){
+                    for (int j = 0; j < 6; j++){
+                        Enemies[i][j].alive = true;
+                        Enemies[i][j].pos = Vector3(-2.5f+j, 0.5f+i*0.5f, 1.0f);
+                    }
+                }
+            }
+            
+            if (state == GAME_OVER && keys[SDL_SCANCODE_Q]) {
+                done = true;
+            }
+            
             else if
                 (state == GAME_LEVEL && keys[SDL_SCANCODE_SPACE]) {
                     if ((ticks - lastBullFired)*100 > 25.0f) {
@@ -311,12 +331,23 @@ int main(int argc, char *argv[]) {
             DrawText(&program, sprFont, "Press Space to Start", 0.3f, 0.0f, -2.8f, 0.0f);
         }
         
+        else if (state == GAME_OVER) {
+            if (enemiesLeft == 0) DrawText(&program, sprFont, "YOU WON!!!", 0.33f, -0.05f, -1.2f, 0.5f);
+            else DrawText(&program, sprFont, "GAME OVER", 0.33f, -0.05f, -1.2f, 0.5f);
+            DrawText(&program, sprFont, ("Your Final Score Was: "+std::to_string(score)), 0.25f, 0.0f, -2.8f, 0.0f);
+            DrawText(&program, sprFont, ("Press q to quit, or s to start again"), 0.18f, 0.0f, -3.1f, -0.5f);
+        }
+        
         else { //draw the enemies
             DrawText(&program, sprFont, ("SCORE: "+std::to_string(score)), 0.3f, 0.0f, -2.8f, 1.85f);
             for (int i = 0; i < 3; i++){
                 for (int j = 0; j < 6; j++){
                     Enemies[i][j].Update(elapsed);
-                    Enemies[i][j].Draw(program, enemy);
+                    SheetSprite temp;
+                    if (i == 0) temp = enemy;
+                    if (i== 1) temp = enemy2;
+                    if (i== 2) temp = enemy3;
+                    Enemies[i][j].Draw(program, temp);
                 }
             }
         }
@@ -344,8 +375,10 @@ int main(int argc, char *argv[]) {
                         Enemies[i][j].alive = false;
                         Bullet[k].alive = false;
                         enemiesLeft--;
-                        score += 10;
-                        if (enemiesLeft == 0) done = true;
+                        if(i==0)score += 10;
+                        if(i==1)score += 20;
+                        if(i==2)score += 30;
+                        if (enemiesLeft == 0) state = GAME_OVER;
                     }
                 }
                 
@@ -360,13 +393,13 @@ int main(int argc, char *argv[]) {
                 if (checkDirec == 2.0f) {
                     Enemies[i][j].direction = 0.0f;
                     Enemies[i][j].pos.y -= 0.05f;
-                    if (Enemies[i][j].pos.y <= -1.1f) done = true;
+                    if (Enemies[i][j].pos.y <= -1.1) state = GAME_OVER;
                 }
                 
                 if (checkDirec == 1.0f){
                     Enemies[i][j].direction = 180.0f;
                     Enemies[i][j].pos.y -= 0.05f;
-                    if (Enemies[i][j].pos.y <= -1.1f) done = true;
+                    if (Enemies[i][j].pos.y <= -1.1) state = GAME_OVER;
                 }
             }
         }
