@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="76" height="32" tilewidth="16" tileheight="16" nextobjectid="16">
+ <tileset firstgid="1" name="dirt-tiles.png" tilewidth="16" tileheight="16" tilecount="384" columns="24">
+  <image source="../../../Game-Programming-Final-Project/NYUCodebase/dirt-tiles.png" width="384" height="256"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="76" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztmEtuw0AIhu2VD2Dvmi68t7KaY/cIvUR7i/YUzahGIhQGZgyTWOovoSY2jOEL83C3cRg2xbJeRptxssa2jq9pGf8al1uWxsJiklpq8GRn4UqvU160jmfg1YuRJR/g9XH7/BnEq4aJxKeF3bxbbQ9ZeH3dPn8z9yP7S9IsxODaZ2LcdagNvgMbPB59ljQ+HfNt+DWaX29eUp6QK11HKBNubV5QLH4GjS31otZ3MF5PXlq9iyHvkrh5WPKzMsN59+B1He/tUZLmuLQucj0dzQtzeu/AhKuXipunEh9qkbxoX2m9deR8wNUboSheHCuNWSsvab+NUASvEiuw1n1K0tF4bWyQNy/LvNOYQXyJpRTP1WphKM0BOnb0em/tHVy/xlyriz4P/nJxpXWC5nN1YLUZ6ivVq9VgNRorPdMqjpU3L8u63rIPaDXRa3SdbBHHyosXp5q+l/I96ifxtEj6TaPXr0eo9uxGVZoDZ+Y1DffvDJPif9ktK7N6Rd9B2jp5Vl65zrQbKO3XuT7C/tBXCcVY1ZtX7ZmSmz9Q+7obaB14ZiV/HGNRJK+cQ54veJ5MSm5wH/uUWEn1wziTwV9j5n2+h7wuyCBPbs4k4ostMT4Tub8OtvpThX+JmTcvnJuUJ83REqPd1+qXrOTPMfN+Hzqa41Hz5AXMJJ11f+wpD0ZRvPBaUXvmtPjV7s/erCL7y5tX7bk/glUUr5Z3Gu1/YDVjRbGy8rL6ev0GdJxnYXUWq+X8b33sB6L641E=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="1" name="Player" type="Player" x="203" y="335" width="16" height="16"/>
+  <object id="2" name="Enemy1" type="Enemy" x="368" y="336" width="16" height="16"/>
+  <object id="3" name="Enemy2" type="Enemy" x="368" y="464" width="16" height="16"/>
+  <object id="4" name="Enemy 3" type="Enemy" x="192" y="464" width="16" height="16"/>
+  <object id="5" name="Enemy4" type="Enemy" x="576" y="464" width="16" height="16"/>
+  <object id="6" name="Enemy5" type="Enemy" x="912" y="112" width="16" height="16"/>
+  <object id="7" name="Enemy6" type="Enemy" x="528" y="192" width="16" height="16"/>
+  <object id="8" name="Enemy7" type="Enemy" x="832" y="480" width="16" height="16"/>
+  <object id="9" name="Enemy8" type="Enemy" x="368" y="48" width="16" height="16"/>
+  <object id="10" name="Goal" type="Goal" x="1023" y="-1" width="16" height="16"/>
+  <object id="11" name="Spike1" type="Spike" x="544" y="64" width="16" height="16"/>
+  <object id="12" name="Spike2" type="Spike" x="544" y="64" width="16" height="16"/>
+  <object id="13" name="Spike3" type="Spike" x="688" y="128" width="16" height="16"/>
+  <object id="14" name="Spike4" type="Spike" x="784" y="48" width="16" height="16"/>
+  <object id="15" name="Spiek5" type="Spike" x="720" y="48" width="16" height="16"/>
+ </objectgroup>
+</map>
